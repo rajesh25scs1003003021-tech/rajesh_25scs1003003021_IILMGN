@@ -1,0 +1,26 @@
+import numpy as np
+import pandas as pd
+
+# Sample data about migration and human activities
+data = {
+    "Human_Activity": ["Deforestation", "Road_Construction", "Urbanization", "Pollution", "Mining"],
+    "Migration_Before": [1000, 1200, 900, 1100, 800],
+    "Migration_After": [600, 700, 500, 650, 400]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Calculate disruption in migration
+df["Migration_Loss"] = df["Migration_Before"] - df["Migration_After"]
+
+# Convert to numpy array for analysis
+loss_array = np.array(df["Migration_Loss"])
+
+# Calculate average loss
+average_loss = np.mean(loss_array)
+
+print("Migration Disruption Data:\n")
+print(df)
+
+print("\nAverage Migration
